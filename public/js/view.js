@@ -86,10 +86,12 @@ $(document).ready(function() {
   // This cancels any edits being made
   function cancelEdit() {
     var currentTodo = $(this).data("todo");
-    $(this).children().hide();
-    $(this).children("input.edit").val(currentTodo.text);
-    $(this).children("span").show();
-    $(this).children("button").show();
+    if (currentTodo) {
+      $(this).children().hide();
+      $(this).children("input.edit").val(currentTodo.text);
+      $(this).children("span").show();
+      $(this).children("button").show();
+    }
   }
 
   // This function constructs a todo-item row
