@@ -7,7 +7,7 @@
 
 // Grabbing our models
 
-var db = require("../models/todo.js");
+var db = require("../models");
 
 // Routes
 // =============================================================
