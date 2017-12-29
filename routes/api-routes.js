@@ -8,7 +8,7 @@
 // Grabbing our models
 
 var db = require("../models");
-
+var dbTodo = 
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -16,7 +16,8 @@ module.exports = function(app) {
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Todo.findAll({}).then(function(dbTodo) {
+    db.Todo.findAll({})
+    .then(function(dbTodo) {
       // We have access to the todos as an argument inside of the callback function
       res.json(dbTodo);
     });
@@ -31,7 +32,8 @@ module.exports = function(app) {
     db.Todo.create({
       text: req.body.text,
       complete: req.body.complete
-    }).then(function(dbTodo) {
+    })
+    .then(function(dbTodo) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbTodo);
     });
@@ -40,11 +42,28 @@ module.exports = function(app) {
   // DELETE route for deleting todos. We can get the id of the todo we want to delete from
   // req.params.id
   app.delete("/api/todos/:id", function(req, res) {
+    db.Todo.destroy({
+      where: {
+        complete: true
+      }
+    })
+    .then(function() {
+      res.json(dbTodo);
+    });
 
   });
 
   // PUT route for updating todos. We can get the updated todo from req.body
   app.put("/api/todos", function(req, res) {
+    db.Todo.update(req.body,
+    {
+    where: {
+      id: req.body.id
+    }
+  })
 
+    .then(function(dbTodo){
+      res.json(dbTodo);
   });
+});
 };
