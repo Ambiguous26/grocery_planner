@@ -8,10 +8,21 @@
 // Grabbing our models
 
 var db = require("../models");
-var dbTodo = 
+// var dbTodo = 
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+
+ app.get("/", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Todo.findAll({})
+    .then(function(dbTodo) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(dbTodo);
+    });
+  });
+
 
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
