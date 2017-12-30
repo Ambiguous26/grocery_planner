@@ -8,12 +8,15 @@
 // Grabbing our models
 
 var db = require("../models");
+var testApiController = require('../controller/testApi');
 // var dbTodo = 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+ app.get("/test", testApiController.index);
 
+ 
  app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Todo.findAll({})
