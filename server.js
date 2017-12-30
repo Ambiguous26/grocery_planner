@@ -28,11 +28,11 @@ app.get('/', function(req,res){
  	res.sendFile(path.join(__dirname, "/../public/index.html"));
 });
 
-app.get('/',function(req,res){
-	connection.query('SELECT * FROM phtn224x85wco5s4;', function (err, data){
-		res.render('index',{phtn224x85wco5s4:data});
-	});
-});
+// app.get('/',function(req,res){
+// 	connection.query('SELECT * FROM phtn224x85wco5s4;', function (err, data){
+// 		res.render('index',{phtn224x85wco5s4:data});
+// 	});
+// });
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
