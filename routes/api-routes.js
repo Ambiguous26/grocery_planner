@@ -8,13 +8,13 @@
 // Grabbing our models
 
 var db = require("../models");
-var testApiController = require('../controller/testApi');
+// var testApiController = require('../controller/testApi');
 // var dbTodo = 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
- app.get("/test", testApiController.index);
+ // app.get("/test", testApiController.index);
 
  
  app.get("/", function(req, res) {
