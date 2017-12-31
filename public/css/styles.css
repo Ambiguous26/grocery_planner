@@ -5,6 +5,7 @@
 .list-group-item {
   height: 50px;
   line-height: 2;
+  opacity: 0.9
 }
 
 input.new-item {
@@ -31,4 +32,10 @@ input.new-item:focus {
 
 .edit {
   width: 100%;
+}
+
+body {
+    background-color: lightblue;
+    background-image: url("../img/veggies.jpeg");
+    background-size: 100%;
 }
