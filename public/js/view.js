@@ -96,13 +96,34 @@ $(document).ready(function() {
 
   // This function constructs a todo-item row
   function createNewRow(todo) {
+    console.log("Creating Rows");
     var $newInputRow = $(
       [
         "<li class='list-group-item todo-item'>",
+
         "<span>",
         todo.text,
         "</span>",
         "<input type='text' class='edit' style='display: none;'>",
+        
+
+        // Where I added another col
+
+
+        // '<div class="dropdown col-md-3">' + 
+        //   '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' + 
+        //     'Dropdown' +
+        //     '<span class="caret"></span>' +
+        //   '</button>' +
+        //     '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
+        //       '<li><a href="#">Action</a></li>' +
+        //       '<li><a href="#">Another action</a></li>' +
+        //       '<li><a href="#">Something else here</a></li>' +
+        //       '<li role="separator" class="divider"></li>' +
+        //       '<li><a href="#">Separated link</a></li>' +
+        //     '</ul>' +
+        //   '</div>',
+
         "<button class='delete btn btn-default'>x</button>",
         "<button class='complete btn btn-default'>✓</button>",
         "</li>"
