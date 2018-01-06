@@ -61,6 +61,9 @@ module.exports = function(app) {
         complete: true
       }
     })
+    // .then(function(byeBye){
+      
+    // })
     .then(function() {
       res.json(dbTodo);
     });
